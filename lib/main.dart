@@ -41,11 +41,11 @@ class FirstScreen extends StatelessWidget {
           ),
         ],
       ),
-      body: ElevatedButton(
+      body: TextButton(
         onPressed: () {
           // Aksi ketika button diklik
         },
-        child: Text("Tombol"),
+        child: Text('Text Button'),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {},
