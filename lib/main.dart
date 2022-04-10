@@ -41,8 +41,13 @@ class FirstScreen extends StatelessWidget {
           ),
         ],
       ),
-      body: Center(
-        child: Text('Text berada di tengah'),
+      body: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: <Widget>[
+          Icon(Icons.share),
+          Icon(Icons.thumb_up),
+          Icon(Icons.thumb_down),
+        ],
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {},
