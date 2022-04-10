@@ -41,14 +41,11 @@ class FirstScreen extends StatelessWidget {
           ),
         ],
       ),
-      body: Column(
-        children: <Widget>[
-          Text(
-            'Sebuah Judul',
-            style: TextStyle(fontSize: 32, fontWeight: FontWeight.bold),
-          ),
-          Text('Lorem ipsum dolor sit amet'),
-        ],
+      body: ElevatedButton(
+        onPressed: () {
+          // Aksi ketika button diklik
+        },
+        child: Text("Tombol"),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {},
