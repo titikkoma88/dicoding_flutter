@@ -14,42 +14,33 @@ class MyApp extends StatelessWidget {
         fontFamily: 'Oswald',
         primarySwatch: Colors.blue,
       ),
-      home: FirstScreen(),
+      home: ScrollingScreen(),
     );
   }
 }
 
-class FirstScreen extends StatelessWidget {
+class ScrollingScreen extends StatelessWidget {
+  final List<int> numberList = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        leading: IconButton(
-          icon: Icon(
-            Icons.menu,
-            color: Colors.white,
-          ),
-          onPressed: () {},
-        ),
-        title: Text('First Screen'),
-        actions: <Widget>[
-          IconButton(
-            icon: Icon(
-              Icons.search,
-              color: Colors.white,
+      body: ListView(
+        children: numberList.map((number) {
+          return Container(
+            height: 250,
+            decoration: BoxDecoration(
+              color: Colors.grey,
+              border: Border.all(color: Colors.black),
             ),
-            onPressed: () {},
-          )
-        ],
-      ),
-      body: Center(
-        child: Text(
-          'Custom Font',
-          style: TextStyle(
-            fontFamily: 'Oswald',
-            fontSize: 30,
-          ),
-        ),
+            child: Center(
+              child: Text(
+                '$number', // Ditampilkan sesuai item
+                style: TextStyle(fontSize: 50),
+              ),
+            ),
+          );
+        }).toList(),
       ),
     );
   }
