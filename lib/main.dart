@@ -11,9 +11,10 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
+        fontFamily: 'Oswald',
         primarySwatch: Colors.blue,
       ),
-      home: FirstScreen(), // Panggil FirstScreen di sini
+      home: FirstScreen(),
     );
   }
 }
@@ -23,13 +24,31 @@ class FirstScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        leading: IconButton(
+          icon: Icon(
+            Icons.menu,
+            color: Colors.white,
+          ),
+          onPressed: () {},
+        ),
         title: Text('First Screen'),
+        actions: <Widget>[
+          IconButton(
+            icon: Icon(
+              Icons.search,
+              color: Colors.white,
+            ),
+            onPressed: () {},
+          )
+        ],
       ),
       body: Center(
-        child: Image.network(
-          'https://picsum.photos/200/300',
-          width: 200,
-          height: 200,
+        child: Text(
+          'Custom Font',
+          style: TextStyle(
+            fontFamily: 'Oswald',
+            fontSize: 30,
+          ),
         ),
       ),
     );
