@@ -18,30 +18,19 @@ class MyApp extends StatelessWidget {
   }
 }
 
-class FirstScreen extends StatefulWidget {
-  @override
-  _FirstScreenState createState() => _FirstScreenState();
-}
-
-class _FirstScreenState extends State<FirstScreen> {
-  bool? agree = false;
-
+class FirstScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text('First Screen'),
       ),
-      body: ListTile(
-        leading: Checkbox(
-          value: agree,
-          onChanged: (bool? value) {
-            setState(() {
-              agree = value;
-            });
-          },
+      body: Center(
+        child: Image.network(
+          'https://picsum.photos/200/300',
+          width: 200,
+          height: 200,
         ),
-        title: Text('Agree / Disagree'),
       ),
     );
   }
