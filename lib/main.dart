@@ -41,11 +41,12 @@ class FirstScreen extends StatelessWidget {
           ),
         ],
       ),
-      body: OutlinedButton(
+      body: IconButton(
+        icon: Icon(Icons.volume_up),
+        tooltip: 'Increase volume by 10',
         onPressed: () {
           // Aksi ketika button diklik
         },
-        child: Text('Outlined Button'),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {},
