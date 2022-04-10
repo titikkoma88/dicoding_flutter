@@ -13,12 +13,11 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: FirstScreen(),// Panggil FirstScreen di sini
- 
+      home: FirstScreen(), // Panggil FirstScreen di sini
     );
   }
 }
- 
+
 class FirstScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -43,10 +42,16 @@ class FirstScreen extends StatelessWidget {
         ],
       ),
       body: Center(
-        child: Text('Hello world!'),
+        child: Container(
+          child: Text('Hi', style: TextStyle(fontSize: 40)),
+          decoration: BoxDecoration(
+            color: Colors.red,
+            shape: BoxShape.circle,
+          ),
+        ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {  },
+        onPressed: () {},
         child: Icon(Icons.add),
       ),
     );
