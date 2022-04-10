@@ -41,12 +41,13 @@ class FirstScreen extends StatelessWidget {
           ),
         ],
       ),
-      body: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      body: Column(
         children: <Widget>[
-          Icon(Icons.share),
-          Icon(Icons.thumb_up),
-          Icon(Icons.thumb_down),
+          Text(
+            'Sebuah Judul',
+            style: TextStyle(fontSize: 32, fontWeight: FontWeight.bold),
+          ),
+          Text('Lorem ipsum dolor sit amet'),
         ],
       ),
       floatingActionButton: FloatingActionButton(
