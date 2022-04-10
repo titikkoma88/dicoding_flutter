@@ -18,39 +18,42 @@ class MyApp extends StatelessWidget {
   }
 }
 
-class FirstScreen extends StatelessWidget {
+class FirstScreen extends StatefulWidget {
+  @override
+  _FirstScreenState createState() => _FirstScreenState();
+}
+
+class _FirstScreenState extends State<FirstScreen> {
+  String? language;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: IconButton(
-          icon: Icon(
-            Icons.menu,
-            color: Colors.white,
-          ),
-          onPressed: () {},
-        ),
         title: Text('First Screen'),
-        actions: [
-          IconButton(
-            icon: Icon(
-              Icons.search,
-              color: Colors.white,
-            ),
-            onPressed: () {},
+      ),
+      body: DropdownButton<String>(
+        items: <DropdownMenuItem<String>>[
+          DropdownMenuItem<String>(
+            value: 'Dart',
+            child: Text('Dart'),
+          ),
+          DropdownMenuItem<String>(
+            value: 'Kotlin',
+            child: Text('Kotlin'),
+          ),
+          DropdownMenuItem<String>(
+            value: 'Swift',
+            child: Text('Swift'),
           ),
         ],
-      ),
-      body: IconButton(
-        icon: Icon(Icons.volume_up),
-        tooltip: 'Increase volume by 10',
-        onPressed: () {
-          // Aksi ketika button diklik
+        value: language,
+        hint: Text('Select Language'),
+        onChanged: (String? value) {
+          setState(() {
+            language = value;
+          });
         },
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {},
-        child: Icon(Icons.add),
       ),
     );
   }
