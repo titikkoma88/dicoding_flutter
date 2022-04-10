@@ -42,6 +42,9 @@ class FirstScreen extends StatelessWidget {
           ),
         ],
       ),
+      body: Center(
+        child: Text('Hello world!'),
+      ),
     );
   }
 }
