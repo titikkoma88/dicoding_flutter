@@ -25,8 +25,8 @@ class ScrollingScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: ListView(
-        children: numberList.map((number) {
+      body: ListView.builder(
+        itemBuilder: (BuildContext context, int index) {
           return Container(
             height: 250,
             decoration: BoxDecoration(
@@ -35,12 +35,13 @@ class ScrollingScreen extends StatelessWidget {
             ),
             child: Center(
               child: Text(
-                '$number', // Ditampilkan sesuai item
+                '${numberList[index]}',
                 style: TextStyle(fontSize: 50),
               ),
             ),
           );
-        }).toList(),
+        },
+        itemCount: numberList.length,
       ),
     );
   }
